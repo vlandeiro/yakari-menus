@@ -96,13 +96,11 @@ name = "Diff operations"
 name = "diff"
 description = "Show changes between commits, commit and working tree, etc"
 template = ["git", "diff", { include = "*" }]
-lexer = "diff"
 
 [menus.d.commands.s]
 name = "staged"
 description = "Show staged changes"
 template = ["git", "diff", "--staged", { include = "*" }]
-lexer = "diff"
 
 ## Clean
 [menus.k]
@@ -126,6 +124,11 @@ inplace = false
 name = "Show commit logs"
 
 [menus.l.arguments]
+"--color" = { name = "--color", selected = "always", choices = [
+  "always",
+  "never",
+  "auto",
+] }
 "-d" = { flag = "--decorate", on = true }
 "-g" = { flag = "--graph", on = true }
 "-o" = { flag = "--oneline", on = true }
@@ -138,13 +141,11 @@ name = "Show commit logs"
 name = "all"
 description = "Show commit logs for all branches"
 template = ["git", "log", "--branches=*", { include = "*" }]
-lexer = "diff"
 
 [menus.l.commands.l]
 name = "current"
 description = "Show commit logs for the current branch"
 template = ["git", "log", { include = "*" }]
-lexer = "diff"
 
 ## Merge
 [menus.m]
