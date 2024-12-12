@@ -90,19 +90,14 @@ name = "Cache operations"
 [menus.c.commands.c]
 name = "clean"
 description = "Clean the uv cache"
-template = ["uv", "cache", "clean"]
+template = ["uv", "cache", "clean", { include = "*" }]
 
 [menus.c.commands.d]
 name = "dir"
 description = "Show cache directory location"
-template = ["uv", "cache", "dir"]
+template = ["uv", "cache", "dir", { include = "*" }]
 
-[menus.c.commands.l]
-name = "list"
-description = "List cached packages"
-template = ["uv", "cache", "list", { include = "*" }]
-
-[menus.c.commands.r]
-name = "remove"
-description = "Remove specific packages from cache"
-template = ["uv", "cache", "remove"]
+[menus.c.commands.p]
+name = "prune"
+description = "Prune all unreachable objects from the cache"
+template = ["uv", "cache", "prune", { include = "*" }]
