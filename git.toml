@@ -110,14 +110,13 @@ name = "Clean operations"
 "-f" = { flag = "--force" }
 "-d" = { flag = "--directory" }
 "-x" = { flag = "--exclude" }
-"--dry-run" = { flag = "--dry-run", on = true }
+"--dry-run" = { flag = "--dry-run" }
 "-i" = { flag = "--interactive", on = true }
 
 [menus.k.commands.c]
 name = "clean"
 description = "Remove untracked files from working tree"
 template = ["git", "clean", { include = "*" }]
-inplace = false
 
 ## Logs
 [menus.l]
