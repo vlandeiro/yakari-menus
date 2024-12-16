@@ -1,0 +1,43 @@
+name = "Roll virtual dice"
+
+[configuration]
+sort_arguments = false
+
+[arguments.-n]
+name = "n"
+description = "Number of dice to roll"
+value = "1"
+
+[arguments.-s]
+name = "s"
+description = "Number of sides per dice"
+value = "6"
+template = "d{self.value}"
+
+[arguments.-x]
+name = "x"
+description = "Number of rolls"
+template = "{self.value}x"
+
+[arguments.-m]
+name = "m"
+description = "Multiplier applied to the result of each dice"
+template = "*{self.value}"
+
+[arguments.-d]
+name = "d"
+description = "Number of lowest dice to drop for each roll"
+template = "s{self.value}"
+
+[commands.r]
+name = "roll"
+template = [
+  "rolldice",
+  { interpolate = [
+    { include = ["-x"] },
+    { include = ["-n"] },
+    { include = ["-s"] },
+    { include = ["-m"] },
+    { include = ["-d"] }
+  ] }
+]
