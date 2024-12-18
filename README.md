@@ -1,7 +1,4 @@
-Menus for [yakari](https://github.com/vlandeiro/yakari)
-
-
-# Building Command Menus for Yakari
+# Building Command Menus for [Yakari](https://github.com/vlandeiro/yakari)
 
 ## 1. Basic Concepts
 
